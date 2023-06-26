@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "rootDir": ".",
+    "outDir": "./tsbuild",
+    // class 中未赋值的成员变量不会被忽略
+    "useDefineForClassFields": true,
+    // 编译之后的文件使用es规范
+    "module": "ESNext",
+    // 使用 node 规范, 从内层到外层
+    "moduleResolution": "Node",
+    "strict": true, // 严格模式
+    // 文件中内容需要导入/导出
+   "isolatedModules": true,
+    // 可以导入json文件
+    // 为了能够使用 import 导入 export = 导出的库
+    "esModuleInterop": true, 
+    // 启用 any 类型的检测
+    "noImplicitAny": false,
+    // 可以使用的底层库文件
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+
+    "resolveJsonModule": true, // 可以导入 json 文件
+    "allowJs": true, // 可以导入js
+    "declaration": true, // 编译之后生成声明文件
+    "skipLibCheck": true, // 取消声明文件检测
+    "sourceMap": true, // 编译之后生成 sourceMap
+    "noEmit": true,
+
+    // 目录别名
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "vite.config.ts"
+  ]
+}
